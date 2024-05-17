@@ -2,7 +2,7 @@
 
 include '../config/db.php';
 
-$stmt = $con->prepare('SELECT * FROM checkout_orders');
+$stmt = $con->prepare('SELECT * FROM checkout_orders order by id desc');
 
 $stmt->execute();
 $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
